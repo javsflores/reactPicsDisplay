@@ -9,7 +9,7 @@ class App extends React.Component {
 
   async onSearchSubmit(term) {
     const response = await axios.get("https://api.unsplash.com/search/photos", {
-      params: { query: term },
+      params: { query: term, per_page: 50 },
       headers: {
         Authorization: `Client-ID ${unsplashKey}`,
       },
